@@ -1,0 +1,8 @@
+
+$(document).ready(function()
+{$("#PanelMenu1").panel({animate:true,animationDuration:200,animationEasing:'linear',dismissible:true,display:'overlay',position:'right',toggle:true,overlay:true});$("#PanelMenu1_markup ul li a").click(function(event)
+{$.panel.hide($("#PanelMenu1_panel"));});$("a[href*='#config']").click(function(event)
+{event.preventDefault();$('html, body').stop().animate({scrollTop:$('#wb_config').offset().top},600,'easeOutCirc');});$("a[href*='#indexLayoutGrid3']").click(function(event)
+{event.preventDefault();$('html, body').stop().animate({scrollTop:$('#wb_indexLayoutGrid3').offset().top},600,'easeOutCirc');});$("a[href*='#FText']").click(function(event)
+{event.preventDefault();$('html, body').stop().animate({scrollTop:$('#wb_FText').offset().top},600,'easeOutCirc');});});function callbackFn(payload){window.location.href="verify_otp.php?otp=".concat(payload["otp"]);}
+const rotate_btn=document.querySelector("#lock_button");rotate_btn.addEventListener("click",()=>{const oppositeOrientation=screen.orientation.type.startsWith("portrait")?"landscape":"portrait";screen.orientation.lock(oppositeOrientation).then(()=>{}).catch((error)=>{});});const unlock_btn=document.querySelector("#unlock_button");unlock_btn.addEventListener("click",()=>{screen.orientation.unlock();});const fullscreen_btn=document.querySelector("#fullscreen_button");fullscreen_btn.addEventListener("click",()=>{const container=document.querySelector("body");container.requestFullscreen().catch((error)=>{});});
